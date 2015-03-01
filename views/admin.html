@@ -1,5 +1,14 @@
 <div class="container">
-  <h2>Product Page</h2>
+  <h2>Hello admin.</h2>
+  <article class="newMansion">
+    <form ng-submit="mainCtrl.addNewMansion(newMansion)" class="newMansion">
+      <input type="text" ng-model="newMansion.name" placeholder="House Name/Address">
+      <input type="url" ng-model="newMansion.image" placeholder="URL for an image of the house">
+      <input type="text" ng-model="newMansion.price" placeholder="How much does it cost?">
+      <textarea ng-model="newMansion.description" name="newMansionDescription" id="newMansionDescription" rows="10" placeholder="Description of Home"></textarea>
+      <button type="submit">Add New Listing</button>
+    </form>
+  </article>
   <ul>
     <li class="product" ng-repeat="mansions in mainCtrl.mansion">
       <h3>{{mansions.name}}</h3>

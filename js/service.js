@@ -34,8 +34,13 @@
         return mansions;
       };
 
+      var addNewMansion = function (mansion) {
+        mansions.push(mansion);
+      }
+
       return {
-        getMansions: getMansion
+        getMansions: getMansion,
+        addMansion: addNewMansion
       };
 
     });

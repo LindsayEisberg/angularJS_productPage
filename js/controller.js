@@ -7,6 +7,16 @@
 
       mainCtrl.mansion = MansionSaleService.getMansions();
 
+      //add a new product via admin
+      mainCtrl.addNewMansion = function (newMansion) {
+        MansionSaleService.addMansion(newMansion);
+        $scope.newMansion = {};
+      };
+
+
+
+
+
       //routes
       mainCtrl.productPage = function () {
       $location.path('/mansions');

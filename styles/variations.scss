@@ -5,12 +5,26 @@
   -moz-transition:$transition;
 }
 
+@mixin transitionImage($transition1, $transition2) {
+  transition: $transition1, $transition2;
+  -webkit-transition: $transition1, $transition2;
+  -o-transition:$transition1, $transition2;
+  -moz-transition:$transition1, $transition2;
+}
+
 @mixin transform($transform) {
   transform: $transform;
   -webkit-transform: $transform;
   -o-transform:$transform;
   -moz-transform:$transform;
 }
+
+/* @mixin transform3d(\$transform3d, \$transform3dv2) {
+  transform: \$transform3d, \$transform3dv2;
+  -webkit-transform: \$transform3d, \$transform3dv2;
+  -o-transform:\$transform3d, \$transform3dv2;
+  -moz-transform:\$transform3d, \$transform3dv2;
+} */
 
 @mixin timing($timing) {
   transition-timing-function: $timing;
