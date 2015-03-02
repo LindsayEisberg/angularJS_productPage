@@ -22,6 +22,10 @@
         templateUrl: 'views/newListing.html',
         controller: "MainController as mainCtrl"
       })
+      .when('/cart', {
+        templateUrl: 'views/addToCart.html',
+        controller: "MainController as mainCtrl"
+      })
       .when('/not-found', {
         templateUrl: 'views/not-found.html',
       })

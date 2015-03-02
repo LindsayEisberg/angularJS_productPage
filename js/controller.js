@@ -22,18 +22,27 @@
 
       mainCtrl.mansion = MansionSaleService.getMansions();
 
+      mainCtrl.shoppingCart = MansionSaleService.getShoppingCart();
 
       //add a new product via admin
       mainCtrl.addNewMansion = function (newMansion) {
         MansionSaleService.addMansion(newMansion);
+        $location.path('/admin');
+
+
         // $scope.newMansion = {};
       };
 
       //delete product
-      mainCtrl.deleteMansion = function (mansion) {
-        MansionSaleService.deleteMansion(mansion);
+      mainCtrl.deleteItem = function (item) {
+        MansionSaleService.deleteOneMansion(item);
 
       };
+
+      mainCtrl.addToCart = function (newCartItem) {
+        MansionSaleService.addToCart(newCartItem);
+        $location.path('/cart');
+      }
 
       //edit listing
       mainCtrl.updateMansion = function (mansions) {
@@ -52,10 +61,6 @@
 
       mainCtrl.newListing = function () {
         $location.path('/newListing');
-      };
-
-      mainCtrl.addListing = function () {
-        $location.path('/admin');
       };
 
 

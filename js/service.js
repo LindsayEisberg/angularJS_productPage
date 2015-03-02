@@ -31,29 +31,59 @@
       ];
 
 
+      var shoppingCart = [
+
+      ];
+
+
       var getMansion = function () {
         return mansions;
       };
 
       var addNewMansion = function (mansion) {
         mansions.push(mansion);
-      }
+      };
 
       var deleteMansion = function (mansion) {
         var idx = mansions.indexOf(mansion);
-        mansions.splice(idx,1);
-      }
+        mansions.splice( idx, 1);
+        console.log(mansion);
+      };
+
 
       var updateMansion = function (mansion) {
           return mansion;
 
-      }
+      };
+
+      var getCart = function () {
+          return shoppingCart;
+           };
+
+      var addToCart = function (newCartItem) {
+             shoppingCart.push(newCartItem);
+           };
+      //
+      // var cartTotal = function () {
+      //   var total = 0;
+      //     getCart().success(function(cartItem) {
+      //       for(var i = 0; i < cartItem.length; i++) {
+      //         total += (cartItem[i].price * cartItem[i].quantity)
+      //           }
+      //           console.log(total);
+      //         });
+      //         return total;
+      //       };
+
 
       return {
         getMansions: getMansion,
         addMansion: addNewMansion,
-        deleteMansion: deleteMansion,
-        editListing: updateMansion
+        deleteOneMansion: deleteMansion,
+        editListing: updateMansion,
+        getShoppingCart: getCart,
+        addToCart: addToCart
+        // cartTotal: cartTotal
       };
 
     });

@@ -154,6 +154,13 @@ h1, h2, h3, h4 {
   font-family: $playfair
 }
 
+a {
+  &:hover{
+    color: indianred;
+    @include transition(all .6s ease);
+  }
+}
+
 #adminPage {
   margin: 20px;
 }
@@ -196,6 +203,15 @@ button {
   margin: 30px 0 30px 0;
 
 }
+
+.fa-shopping-cart {
+  margin-right: 10px;
+  &:hover {
+    color: indianred;
+    @include transition(all .6s ease);
+  }
+}
+
 
 .newProd {
   padding: 18px;

@@ -169,6 +169,13 @@
 h1, h2, h3, h4 {
   font-family: "Playfair Display", serif; }
 
+a:hover {
+  color: indianred;
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease; }
+
 #adminPage {
   margin: 20px; }
 
@@ -201,6 +208,15 @@ button {
 .newListingBtn {
   font-family: "Playfair Display", serif;
   margin: 30px 0 30px 0; }
+
+.fa-shopping-cart {
+  margin-right: 10px; }
+  .fa-shopping-cart:hover {
+    color: indianred;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease; }
 
 .newProd {
   padding: 18px;

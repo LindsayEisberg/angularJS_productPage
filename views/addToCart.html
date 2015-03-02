@@ -1,0 +1,11 @@
+<h1>CART</h1>
+<a href="#/mansions">Continue Shopping</a>
+<ul>
+  <li ng-repeat="cartItem in mainCtrl.shoppingCart">
+    <h4>{{cartItem.name}} <span>{{cartItem.price | currency}}</span></h4>
+
+  </li>
+</ul>
+<hr />
+<!-- total price goes here -->
+<!-- <h4>{{cartItem.cartTotal | currency}}</h4> -->
