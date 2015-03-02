@@ -27,7 +27,8 @@
     min-height: 120%;
     width: auto;
     height: auto;
-    opacity: 0.8;
+    opacity: 0.5;
+    background-size: cover;
     @include transform(translate3d(0,0,0));
     @include transitionImage(transform 0.6s, opacity 0.6s);
     @include timing(cubic-bezier(0.7, 0, 0.3, 1));
@@ -53,11 +54,14 @@
   font-size: 4em;
   font-family: $playfair;
   line-height: 1;
+  color: antiquewhite;
 }
+
 
 .intro_subtitle {
   display: flex;
   justify-content: center;
+  color: indianred;
 }
 
 .intro_description {
@@ -77,6 +81,15 @@
   outline: none;
   border: none;
   background: none;
+  &:hover {
+    background-color: #bab653;
+  }
+  &:active {
+    background-color: #bab653;
+  }
+  &:focus {
+    background-color: #bab653;
+  }
 }
 
 .trigger span {
@@ -94,6 +107,7 @@
 .icon {
   @include transitionImage(opacity 0.3s, transform 0.3s);
   @include transformOrigin(50% 50%);
+
 }
 
 .icon--cross,
@@ -110,9 +124,6 @@
   @include transform(scale3d(1,1,1));
 }
 
-.icon--cross {
-  color: red;
-}
 
 
 .items-wrap {
@@ -136,4 +147,59 @@
 
 .container--open .items-wrap::after {
   opacity: 0;
+}
+
+/////////////////////////////////////////////
+#adminPage {
+  margin: 20px;
+}
+
+.listingRow {
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#listing {
+  border: 1px solid black;
+  width: 32.5%;
+  margin-top: 30px;
+  margin-right: 5.5px;
+  margin-left: 5.5px;
+
+}
+
+//buttons
+button {
+  color: #333333;
+  font-family: $playfair;
+}
+
+.mainBtn {
+  margin-top: 20%;
+}
+
+.newListingBtn {
+  font-family: $playfair;
+  margin: 30px 0 30px 0;
+
+}
+
+.newProd {
+  padding: 18px;
+  background-color: indianred;
+  color: antiquewhite;
+  border: 2px solid antiquewhite;
+  font-size: 1.1em;
+  &:hover {
+    color: indianred;
+    background-color: antiquewhite;
+    border: 2px solid indianred;
+    @include transition(all .6s ease);
+  }
+}
+//list
+ul {
+  list-style-type: none;
 }

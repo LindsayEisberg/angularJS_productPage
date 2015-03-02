@@ -1,15 +1,14 @@
 <div class="container">
   <h2>Product Page</h2>
-  <ul>
-    <li class="product" ng-repeat="mansions in mainCtrl.mansion">
+  <div class="row listingRow">
+    <article class="large-4 columns" id="listing" ng-repeat="mansions in mainCtrl.mansion">
       <h3>{{mansions.name}}</h3>
       <img data-ng-src={{mansions.image}} />
       <p>${{mansions.price}}</p>
       <p>{{mansions.description}}</p>
       <div class="productBtns">
-
+        <button ng-click="">Add to Shopping Cart</button>
       </div>
-    </li>
-  </ul>
-
+    </article>
+  </div>
 </div>

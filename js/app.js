@@ -18,6 +18,10 @@
         templateUrl: 'views/admin.html',
         controller:'MainController as mainCtrl'
       })
+      .when('/newListing', {
+        templateUrl: 'views/newListing.html',
+        controller: "MainController as mainCtrl"
+      })
       .when('/not-found', {
         templateUrl: 'views/not-found.html',
       })

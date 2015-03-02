@@ -1,25 +1,25 @@
-<div class="container">
+<div class="container" id="adminPage">
   <h2>Hello admin.</h2>
-  <article class="newMansion">
-    <form ng-submit="mainCtrl.addNewMansion(newMansion)" class="newMansion">
-      <input type="text" ng-model="newMansion.name" placeholder="House Name/Address">
-      <input type="url" ng-model="newMansion.image" placeholder="URL for an image of the house">
-      <input type="text" ng-model="newMansion.price" placeholder="How much does it cost?">
-      <textarea ng-model="newMansion.description" name="newMansionDescription" id="newMansionDescription" rows="10" placeholder="Description of Home"></textarea>
-      <button type="submit">Add New Listing</button>
-    </form>
-  </article>
-  <ul>
-    <li class="product" ng-repeat="mansions in mainCtrl.mansion">
+  <div class="newListingBtn">
+    <a class="newProd" href="" ng-click="mainCtrl.newListing()">Create a New Listing</a>
+  </div>
+  <div class="row listingRow">
+    <article class="large-4 columns" id="listing" ng-repeat="mansions in mainCtrl.mansion">
       <h3>{{mansions.name}}</h3>
       <img data-ng-src={{mansions.image}} />
       <p>${{mansions.price}}</p>
       <p>{{mansions.description}}</p>
       <div class="productBtns">
-        <button ng-click="">Edit Product</button>
-        <button ng-click="">Delete Product</button>
+        <button href="" ng-click="on()" ng-class="{active : edit}" ng-hide="showButton()">Edit Product</button>
+        <button ng-click="off()" ng-show="showButton()">Save Listing</button>
+        <button ng-click="mainCtrl.deleteMansion()">Delete Product</button>
       </div>
-    </li>
-  </ul>
-
+      <div class="editListing" ng-show="showButton()">
+        <input type="text" ng-model="mansions.name" value="{{mansions.name}}">
+        <input type="url" ng-model="mansions.image" value="{{mansions.image}}">
+        <input type="text" ng-model="mansions.price" value="{{mansions.price}}">
+        <textarea ng-model="mansions.description" name="mansionsDescription" id="mansionsDescription" rows="10" value="{{mansions.description}}"></textarea>
+      </div>
+    </article>
+  </div>
 </div>

@@ -30,6 +30,7 @@
 
       ];
 
+
       var getMansion = function () {
         return mansions;
       };
@@ -38,9 +39,21 @@
         mansions.push(mansion);
       }
 
+      var deleteMansion = function (mansion) {
+        var idx = mansions.indexOf(mansion);
+        mansions.splice(idx,1);
+      }
+
+      var updateMansion = function (mansion) {
+          return mansion;
+
+      }
+
       return {
         getMansions: getMansion,
-        addMansion: addNewMansion
+        addMansion: addNewMansion,
+        deleteMansion: deleteMansion,
+        editListing: updateMansion
       };
 
     });
