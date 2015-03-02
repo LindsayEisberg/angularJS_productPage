@@ -19,13 +19,6 @@
   -moz-transform:$transform;
 }
 
-/* @mixin transform3d(\$transform3d, \$transform3dv2) {
-  transform: \$transform3d, \$transform3dv2;
-  -webkit-transform: \$transform3d, \$transform3dv2;
-  -o-transform:\$transform3d, \$transform3dv2;
-  -moz-transform:\$transform3d, \$transform3dv2;
-} */
-
 @mixin timing($timing) {
   transition-timing-function: $timing;
   -webkit-transition-timing-function: $timing;
@@ -38,6 +31,33 @@
   -webkit-transform-origin: $transformOrigin;
   -o-transform-origin:$transformOrigin;
   -moz-transform-origin:$transformOrigin;
+}
+
+@mixin visibility($visibility) {
+  visibility: $visibility;
+  -webkit-visibility: $visibility;
+  -moz-visibility: $visibility;
+  -o-visibility: $visibility;
+}
+
+@mixin perspec($perspec) {
+  perspective: $perspec;
+  -webkit-perspective: $perspec;
+  -o-perspective: $perspec;
+  -moz-perspective: $perspec;
+}
+
+@mixin transformStyle($transformStyle) {
+  -webkit-transform-style: $transformStyle;
+  -moz-transform-style: $transformStyle;
+	transform-style: $transformStyle;
+  -o-transform-style: $transformStyle;
+}
+
+@mixin animate ($animate) {
+  animation: $animate;
+  -webkit-animation: $animate;
+  -moz-animation: $animate;
 }
 
 $playfair: 'Playfair Display', serif;

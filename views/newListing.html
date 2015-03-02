@@ -1,4 +1,8 @@
+<div class="container">
+
 <article class="newMansion">
+  <h2>New Listing</h2>
+  <hr />
   <form ng-submit="mainCtrl.addNewMansion(newMansion)" class="newMansion">
     <input type="text" ng-model="newMansion.name" placeholder="House Name/Address">
     <input type="url" ng-model="newMansion.image" placeholder="URL for an image of the house">
@@ -7,3 +11,4 @@
     <button type="submit" ng-click="mainCtrl.addListing()">Add New Listing</button>
   </form>
 </article>
+</div>
