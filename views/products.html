@@ -7,8 +7,8 @@
       <p>${{boots.price}}</p>
       <p>{{boots.color}}</p>
       <p>{{boots.description}}</p>
-      <div class="productBtns">
-        <button ng-click="mainCtrl.addToCart(boots)"><i class="fa fa-shopping-cart"></i>Add to Shopping Cart</button>
+      <div class="productBtns" ng-controller="CartController as cartCtrl">
+        <button ng-click="cartCtrl.addItem(boots)"><i class="fa fa-shopping-cart"></i>Add to Shopping Cart</button>
       </div>
     </article>
   </div>

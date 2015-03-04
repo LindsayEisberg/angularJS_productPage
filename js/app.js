@@ -28,7 +28,7 @@
       })
       .when('/cart', {
         templateUrl: 'views/addToCart.html',
-        controller: "CartController as cartCtrl"
+        controller: "MainController as mainCtrl"
       })
       .when('/not-found', {
         templateUrl: 'views/not-found.html',

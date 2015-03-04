@@ -1,15 +1,15 @@
+<div ng-controller="CartController as cartCtrl">
 <h1>CART</h1>
 <a href="#/boots">Continue Shopping</a>
 <ul>
-  <li ng-repeat="cartItem in mainCtrl.shoppingCart">
+  <li ng-repeat="cartItem in cartCtrl.shoppingCart">
     <img data-ng-src={{cartItem.image}} id="thumbImg" /><h4>{{cartItem.name}} <span>{{cartItem.price | currency}}</span></h4>
 
   </li>
 </ul>
 <hr />
 <!-- total price goes here -->
-<!-- <h4>{{cartItem.cartTotal | currency}}</h4> -->
-
+<h4>{{cartCtrl.updateTotal() | currency}}</h4></div>
 
 <!-- to get the cart total
  --><!-- var calc = function () {
@@ -22,4 +22,3 @@
 <!-- update total = function () {
 
 } -->
- 

@@ -38,17 +38,16 @@
       mainCtrl.addNewShoe = function (newShoe) {
         BootService.addShoe(newShoe);
         $location.path('/admin');
-
-
-        // $scope.newMansion = {};
+        mainCtrl.boot = BootService.getBoots();
       };
 
       //delete product
       mainCtrl.deleteItem = function (item) {
         BootService.deleteOneShoe(item);
+      
+
 
       };
-
 
 
       //edit listing
@@ -73,16 +72,19 @@
         $location.path('/newListing');
       };
 
-      //shopping car
+      //shopping cart
 })
-      .controller('CartController', function (CartService) {
+      .controller('CartController', function (CartService, $location) {
         var cartCtrl = this;
 
-        cartCtrl.newCartItems = CartService.getShoppingCart();
+        CartService.getShoppingCart().success(function (data) {
+           cartCtrl.shoppingCart = data;
+        });
         cartCtrl.total = 0;
 
-        cartCtrl.addToCart = function (newCartItem) {
-          BootService.addToCart(newCartItem);
+        cartCtrl.addItem = function (newItem) {
+
+          CartService.addToCart(newItem);
           $location.path('/cart');
         };
         // cart.removeItem = function (item) {
