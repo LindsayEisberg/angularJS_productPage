@@ -10,7 +10,7 @@
         templateUrl: 'views/main.html',
         controller:'MainController as mainCtrl'
       })
-      .when('/mansions', {
+      .when('/boots', {
         templateUrl: 'views/products.html',
         controller:'MainController as mainCtrl'
       })
@@ -22,9 +22,13 @@
         templateUrl: 'views/newListing.html',
         controller: "MainController as mainCtrl"
       })
+      .when('/boots/:detailPage', {
+        templateUrl: 'views/detailPage.html',
+        controller: 'MainController as mainCtrl'
+      })
       .when('/cart', {
         templateUrl: 'views/addToCart.html',
-        controller: "MainController as mainCtrl"
+        controller: "CartController as cartCtrl"
       })
       .when('/not-found', {
         templateUrl: 'views/not-found.html',
@@ -32,5 +36,7 @@
       .otherwise({
         redirectTo: '/not-found'
       });
-  });
+  })
+  .constant('_', _);
+
 })();

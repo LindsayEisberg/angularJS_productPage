@@ -5,22 +5,54 @@
     <a class="newProd" href="" ng-click="mainCtrl.newListing()">Create a New Listing</a>
   </div>
   <div class="row listingRow">
-    <article class="large-4 columns" id="listing" ng-repeat="mansions in mainCtrl.mansion">
-      <h3>{{mansions.name}}</h3>
-      <img data-ng-src={{mansions.image}} />
-      <p>${{mansions.price}}</p>
-      <p>{{mansions.description}}</p>
+    <article class="large-4 columns" id="listing" ng-repeat="boots in mainCtrl.boot">
+      <h3>{{boots.name}}</h3>
+      <img data-ng-src={{boots.image}} />
+      <p>${{boots.price}}</p>
+      <p>{{boots.color}}</p>
+      <p>{{boots.description}}</p>
       <div class="productBtns">
         <button href="" ng-click="on()" ng-class="{active : edit}" ng-hide="showButton()">Edit Product</button>
         <button ng-click="off()" ng-show="showButton()">Save Listing</button>
-        <button ng-click="mainCtrl.deleteItem(mansions)">Delete Product</button>
+        <button ng-click="mainCtrl.deleteItem(boots._id)">Delete Product</button>
       </div>
       <div class="editListing" ng-show="showButton()">
-        <input type="text" ng-model="mansions.name" value="{{mansions.name}}">
-        <input type="url" ng-model="mansions.image" value="{{mansions.image}}">
-        <input type="text" ng-model="mansions.price" value="{{mansions.price}}">
-        <textarea ng-model="mansions.description" name="mansionsDescription" id="mansionsDescription" rows="10" value="{{mansions.description}}"></textarea>
+        <input type="text" ng-model="boots.name" value="{{boots.name}}">
+        <input type="url" ng-model="boots.image" value="{{boots.image}}">
+        <input type="text" ng-model="boots.price" value="{{boots.price}}">
+        <input type="text" ng-model="boots.color" value="{{boots.color}}">
+        <textarea ng-model="boots.description" name="bootsDescription" id="bootsDescription" rows="10" value="{{boots.description}}"></textarea>
       </div>
     </article>
   </div>
 </div>
+
+
+<!--
+div ng-init="main.showButton = 0"
+<button ng-hide="main.showButton === $index" ng-click="show($index)">show buy nutton</button>
+ng-show="main.showButton === $index"
+
+
+in controller
+main.showButton = 0
+main.show = function(index) {
+  main.showButton = index;
+} -->
+
+<!--
+<div class="productBtns">
+  <button href="" ng-click="on()" ng-class="{active : edit}" ng-hide="showButton()">Edit Product</button>
+  <button ng-click="off()" ng-show="showButton()">Save Listing</button>
+  <button ng-click="mainCtrl.deleteItem(boots._id)">Delete Product</button>
+</div>
+<div class="editListing" ng-show="showButton()">
+  <input type="text" ng-model="boots.name" value="{{boots.name}}">
+  <input type="url" ng-model="boots.image" value="{{boots.image}}">
+  <input type="text" ng-model="boots.price" value="{{boots.price}}">
+  <input type="text" ng-model="boots.color" value="{{boots.color}}">
+  <textarea ng-model="boots.description" name="bootsDescription" id="bootsDescription" rows="10" value="{{boots.description}}"></textarea>
+</div>
+</article>
+</div>
+</div> -->

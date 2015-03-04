@@ -1,13 +1,14 @@
 
 
-<article class="newMansion">
+<article class="newShoe">
   <h2>New Listing</h2>
   <hr />
-  <form ng-submit="mainCtrl.addNewMansion(newMansion)" class="newMansion">
-    <input type="text" ng-model="newMansion.name" placeholder="House Name/Address">
-    <input type="url" ng-model="newMansion.image" placeholder="URL for an image of the house">
-    <input type="text" ng-model="newMansion.price" placeholder="How much does it cost?">
-    <textarea ng-model="newMansion.description" name="newMansionDescription" id="newMansionDescription" rows="10" placeholder="Description of Home"></textarea>
+  <form ng-submit="mainCtrl.addNewShoe(newShoe)" class="newShoe">
+    <input type="text" ng-model="newShoe.name" placeholder="Shoe Name">
+    <input type="url" ng-model="newShoe.image" placeholder="URL for an image of the shoe">
+    <input type="text" ng-model="newShoe.price" placeholder="How much does it cost?">
+    <input type="text" ng-model="newShoe.color" placeholder="Color">
+    <textarea ng-model="newShoe.description" name="newShoeDescription" id="newShoeDescription" rows="10" placeholder="Description of Shoe"></textarea>
     <button type="submit">Add New Listing</button>
   </form>
 </article>

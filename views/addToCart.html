@@ -1,11 +1,25 @@
 <h1>CART</h1>
-<a href="#/mansions">Continue Shopping</a>
+<a href="#/boots">Continue Shopping</a>
 <ul>
   <li ng-repeat="cartItem in mainCtrl.shoppingCart">
-    <h4>{{cartItem.name}} <span>{{cartItem.price | currency}}</span></h4>
+    <img data-ng-src={{cartItem.image}} id="thumbImg" /><h4>{{cartItem.name}} <span>{{cartItem.price | currency}}</span></h4>
 
   </li>
 </ul>
 <hr />
 <!-- total price goes here -->
 <!-- <h4>{{cartItem.cartTotal | currency}}</h4> -->
+
+
+<!-- to get the cart total
+ --><!-- var calc = function () {
+  if(!cart.length) return 0;
+  return _.pluck(cart, 'price').reduce(function(memo, num){
+    return memo + num
+  })
+} -->
+
+<!-- update total = function () {
+
+} -->
+ 
