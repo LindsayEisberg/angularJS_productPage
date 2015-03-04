@@ -1,0 +1,322 @@
+@mixin transition($transition) {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -o-transition:$transition;
+  -moz-transition:$transition;
+}
+
+@mixin transitionImage($transition1, $transition2) {
+  transition: $transition1, $transition2;
+  -webkit-transition: $transition1, $transition2;
+  -o-transition:$transition1, $transition2;
+  -moz-transition:$transition1, $transition2;
+}
+
+@mixin transform($transform) {
+  transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform:$transform;
+  -moz-transform:$transform;
+}
+
+@mixin timing($timing) {
+  transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -moz-transition-timing-function: $timing;
+}
+
+@mixin transformOrigin($transformOrigin) {
+  transform-origin: $transformOrigin;
+  -webkit-transform-origin: $transformOrigin;
+  -o-transform-origin:$transformOrigin;
+  -moz-transform-origin:$transformOrigin;
+}
+
+@mixin visibility($visibility) {
+  visibility: $visibility;
+  -webkit-visibility: $visibility;
+  -moz-visibility: $visibility;
+  -o-visibility: $visibility;
+}
+
+@mixin perspec($perspec) {
+  perspective: $perspec;
+  -webkit-perspective: $perspec;
+  -o-perspective: $perspec;
+  -moz-perspective: $perspec;
+}
+
+@mixin transformStyle($transformStyle) {
+  -webkit-transform-style: $transformStyle;
+  -moz-transform-style: $transformStyle;
+	transform-style: $transformStyle;
+  -o-transform-style: $transformStyle;
+}
+
+@mixin animate ($animate) {
+  animation: $animate;
+  -webkit-animation: $animate;
+  -moz-animation: $animate;
+}
+
+$playfair: 'Playfair Display', serif;
+
+
+//homepage image effect
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after {display: table;  content: ''; }
+.clearfix:after { clear: both; }
+
+
+.intro {
+  position: fixed;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #2a2e39;
+  @include transition(transform 0.6s);
+  @include timing(cubic-bezier(0.7, 0, 0.3, 1));
+}
+
+.container--open .intro {
+  @include transform(translate3d(0, -100%, 0) translate3d(0, 250px, 0));
+}
+
+  .intro_image {
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 120%;
+    width: auto;
+    height: auto;
+    opacity: 0.5;
+    background-size: cover;
+    @include transform(translate3d(0,0,0));
+    @include transitionImage(transform 0.6s, opacity 0.6s);
+    @include timing(cubic-bezier(0.7, 0, 0.3, 1));
+  }
+
+.container--open .intro_image {
+  opacity: 0;
+  @include transform(translate3d(0, 20%, 0));
+}
+
+.intro_content {
+  position: absolute;
+  bottom: 0;
+  padding: 1.8em;
+  width: 100%;
+  font-size: 1.15em;
+}
+
+
+.intro_title {
+  margin: 0 0 20px;
+  font-weight: 900;
+  font-size: 4em;
+  font-family: $playfair;
+  line-height: 1;
+  color: antiquewhite;
+}
+
+
+.intro_subtitle {
+  display: flex;
+  justify-content: center;
+  color: indianred;
+}
+
+.intro_description {
+  margin: 0 auto 0 1em;
+  line-height: 1.2;
+}
+
+.trigger {
+  position: relative;
+  -webkit-flex: none;
+  flex: none;
+  overflow: hidden;
+  margin: 0 0 0 20px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background: none;
+  &:hover {
+    background-color: #bab653;
+  }
+  &:active {
+    background-color: #bab653;
+  }
+  &:focus {
+    background-color: #bab653;
+  }
+}
+
+.trigger span {
+  position: absolute;
+  top: 100%;
+}
+
+.icon rect,
+.icon line {
+  stroke: #dbdbdb;
+  fill: none;
+  stroke-width: 2px;
+}
+
+.icon {
+  @include transitionImage(opacity 0.3s, transform 0.3s);
+  @include transformOrigin(50% 50%);
+
+}
+
+.icon--cross,
+.trigger--active
+.icon--grid {
+  opacity: 0;
+  @include transform(scale3d(0.5, 0.5, 1));
+}
+
+
+.trigger--active
+.icon--cross {
+  opacity: 1;
+  @include transform(scale3d(1,1,1));
+}
+
+
+
+.items-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2a2e39;
+    content: '';
+    opacity: 1;
+    @include transition(opacity 0.6s);
+    @include timing(cubic-bezier(0.7, 0, 0.3, 1));
+    pointer-events: none;
+  }
+}
+
+.container--open .items-wrap::after {
+  opacity: 0;
+}
+
+/////////////////////////////////////////////
+h1, h2, h3, h4 {
+  font-family: $playfair
+}
+
+a {
+  &:hover{
+    color: indianred;
+    @include transition(all .6s ease);
+  }
+}
+
+#adminPage {
+  margin: 20px;
+  button {
+    font-size: 13px;
+  }
+}
+
+.listingRow {
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom:20px;
+}
+
+#listing {
+  border: 1px solid black;
+  width: 25%;
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.newShoe {
+  width: 700px;
+  margin: 10% auto;
+  h2 {
+    text-align: center;
+  }
+}
+//buttons
+button {
+  color: #333333;
+  font-family: $playfair;
+}
+
+.mainBtn {
+  margin-top: 20%;
+  background-color: #eeeeee;
+  border-color: #bebebe;
+  &:hover {
+    background-color: #bebebe;
+    color: black;
+  }
+  &:focus {
+    background-color: #bebebe;
+    color: black;
+  }
+  &:default {
+    background-color: #bebebe;
+    color: black;
+  }
+}
+
+
+.newListingBtn {
+  font-family: $playfair;
+  margin: 30px 0 30px 0;
+
+}
+
+.fa-shopping-cart {
+  margin-right: 10px;
+  &:hover {
+    color: indianred;
+    @include transition(all .6s ease);
+  }
+}
+
+
+.newProd {
+  padding: 18px;
+  background-color: indianred;
+  color: antiquewhite;
+  border: 2px solid antiquewhite;
+  font-size: 1.1em;
+  &:hover {
+    color: indianred;
+    background-color: antiquewhite;
+    border: 2px solid indianred;
+    @include transition(all .6s ease);
+  }
+}
+//list
+ul {
+  list-style-type: none;
+}
+
+//image
+#thumbImg {
+  height: 100px;
+  width: 100px;
+}
