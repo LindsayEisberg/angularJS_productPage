@@ -186,7 +186,7 @@ a:hover {
 
 #listing {
   border: 1px solid black;
-  width: 25%;
+  width: 27%;
   margin-top: 30px;
   margin-right: 10px;
   margin-left: 10px; }
@@ -199,15 +199,13 @@ a:hover {
 
 button {
   color: #333333;
-  font-family: 'Playfair Display', serif; }
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px; }
 
 .mainBtn {
   margin-top: 20%;
   background-color: #eeeeee;
   border-color: #bebebe; }
-  .mainBtn:hover {
-    background-color: #bebebe;
-    color: black; }
 
 .newListingBtn {
   font-family: 'Playfair Display', serif;

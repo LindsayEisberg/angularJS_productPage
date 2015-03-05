@@ -1,20 +1,17 @@
 
-<div class="container" id="adminPage">
+<div class="container" id="adminPage" ng-controller="AdminController as admin">
   <h2>Hello admin.</h2>
   <div class="newListingBtn">
-    <a class="newProd" href="" ng-click="mainCtrl.newListing()">Create a New Listing</a>
+    <a class="newProd" href="" ng-click="admin.newListing()">Create a New Listing</a>
   </div>
   <div class="row listingRow">
-    <article class="large-4 columns" id="listing" ng-repeat="boots in mainCtrl.boot">
-      <h3>{{boots.name}}</h3>
-      <img data-ng-src={{boots.image}} />
-      <p>${{boots.price}}</p>
-      <p>{{boots.color}}</p>
-      <p>{{boots.description}}</p>
+    <article class="large-4 columns" id="listing" ng-repeat="boots in admin.boot">
+      <product name="{{boots.name}}" image="{{boots.image}}" price="{{boots.price}}" color="{{boots.color}}" description="{{boots.description}}"></product>
+
       <div class="productBtns">
         <button href="" ng-click="on()" ng-class="{active : edit}" ng-hide="showButton()">Edit Product</button>
         <button ng-click="off()" ng-show="showButton()">Save Listing</button>
-        <button ng-click="mainCtrl.deleteItem(boots._id)">Delete Product</button>
+        <button ng-click="admin.deleteItem(boots._id)">Delete Product</button>
       </div>
       <div class="editListing" ng-show="showButton()">
         <input type="text" ng-model="boots.name" value="{{boots.name}}">

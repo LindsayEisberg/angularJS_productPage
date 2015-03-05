@@ -1,9 +1,9 @@
-
+<div ng-controller="AdminController as admin">
 
 <article class="newShoe">
   <h2>New Listing</h2>
   <hr />
-  <form ng-submit="mainCtrl.addNewShoe(newShoe)" class="newShoe">
+  <form ng-submit="admin.addNewShoe(newShoe)" class="newShoe">
     <input type="text" ng-model="newShoe.name" placeholder="Shoe Name">
     <input type="url" ng-model="newShoe.image" placeholder="URL for an image of the shoe">
     <input type="text" ng-model="newShoe.price" placeholder="How much does it cost?">
@@ -12,3 +12,4 @@
     <button type="submit">Add New Listing</button>
   </form>
 </article>
+</div>

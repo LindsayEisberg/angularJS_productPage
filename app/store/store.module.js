@@ -8,11 +8,11 @@
     $routeProvider
       .when('/store/boots', {
         templateUrl: 'store/views/products.html',
-        controller:'ProductController as productCtrl'
+        controller:'MainController as mainCtrl'
       })
       .when('/store/admin', {
         templateUrl: 'store/views/admin.html',
-        controller:'AdminController as adminCtrl'
+        controller:'MainController as mainCtrl'
       })
       .when('/store/newListing', {
         templateUrl: 'store/views/newListing.html',

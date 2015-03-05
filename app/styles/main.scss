@@ -243,7 +243,7 @@ a {
 
 #listing {
   border: 1px solid black;
-  width: 25%;
+  width: 27%;
   margin-top: 30px;
   margin-right: 10px;
   margin-left: 10px;
@@ -261,24 +261,13 @@ a {
 button {
   color: #333333;
   font-family: $playfair;
+  margin-bottom: 20px;
 }
 
 .mainBtn {
   margin-top: 20%;
   background-color: #eeeeee;
   border-color: #bebebe;
-  &:hover {
-    background-color: #bebebe;
-    color: black;
-  }
-  &:focus {
-    background-color: #bebebe;
-    color: black;
-  }
-  &:default {
-    background-color: #bebebe;
-    color: black;
-  }
 }
 
 
